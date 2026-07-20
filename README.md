@@ -1,3 +1,6 @@
+<div align="center">
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,45:1D4ED8,100:22C55E&height=220&section=header&text=Huynh+Don+Thuan&fontSize=48&fontColor=F8FAFC&animation=fadeIn&fontAlignY=35&desc=School+of+Information+Technology&descAlignY=55&descSize=18" alt="header" />
+</div>
 
 ## 🌐 Socials:
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/https://www.facebook.com/donthuan.090806) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/www.linkedin.com/in/DonThuan)  [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:donthuan090806@gmail.com) 
