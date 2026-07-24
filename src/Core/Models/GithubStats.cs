@@ -31,4 +31,39 @@ public class GithubStats
     /// Username của GitHub account
     /// </summary>
     public string Username { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Số lượng followers
+    /// </summary>
+    public int Followers { get; set; }
+
+    /// <summary>
+    /// Số lượng following
+    /// </summary>
+    public int Following { get; set; }
+
+    /// <summary>
+    /// Bio/Giới thiệu
+    /// </summary>
+    public string Bio { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Website/Blog URL
+    /// </summary>
+    public string Blog { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Vị trí địa lý
+    /// </summary>
+    public string Location { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Tổng số Pull Requests đã tạo
+    /// </summary>
+    public int TotalPullRequests { get; set; }
+
+    /// <summary>
+    /// Tổng số Issues đã tạo
+    /// </summary>
+    public int TotalIssues { get; set; }
 }

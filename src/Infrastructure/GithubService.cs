@@ -46,7 +46,12 @@ public class GithubService : IGithubService
             var stats = new GithubStats
             {
                 Username = user.Login,
-                TotalRepos = user.PublicRepos
+                TotalRepos = user.PublicRepos,
+                Followers = user.Followers,
+                Following = user.Following,
+                Bio = user.Bio ?? string.Empty,
+                Blog = user.Blog ?? string.Empty,
+                Location = user.Location ?? string.Empty
             };
 
             var repos = new List<Repository>();
@@ -75,8 +80,12 @@ public class GithubService : IGithubService
             // Ước tính commits
             stats.CommitsThisYear = EstimateCommits(repos);
 
-            _logger.LogInformation("Thành công lấy thống kê: {Repos} repos, {Stars} stars", 
-                stats.TotalRepos, stats.TotalStars);
+            // Đếm tổng số Pull Requests và Issues
+            stats.TotalPullRequests = await CountPullRequestsAsync(cancellationToken);
+            stats.TotalIssues = await CountIssuesAsync(cancellationToken);
+
+            _logger.LogInformation("Thành công lấy thống kê: {Repos} repos, {Stars} stars, {Followers} followers", 
+                stats.TotalRepos, stats.TotalStars, stats.Followers);
 
             return stats;
         }
@@ -118,6 +127,46 @@ public class GithubService : IGithubService
         catch
         {
             return repos.Count * 10;
+        }
+    }
+
+    private async Task<int> CountPullRequestsAsync(CancellationToken cancellationToken)
+    {
+        try
+        {
+            var prRequest = new SearchIssuesRequest
+            {
+                Author = _username,
+                Type = IssueTypeQualifier.PullRequest,
+                State = ItemState.Closed
+            };
+            var result = await _githubClient.Search.SearchIssues(prRequest);
+            return result.TotalCount;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, "Không thể lấy số lượng Pull Requests: {Message}", ex.Message);
+            return 0;
+        }
+    }
+
+    private async Task<int> CountIssuesAsync(CancellationToken cancellationToken)
+    {
+        try
+        {
+            var issueRequest = new SearchIssuesRequest
+            {
+                Author = _username,
+                Type = IssueTypeQualifier.Issue,
+                State = ItemState.Closed
+            };
+            var result = await _githubClient.Search.SearchIssues(issueRequest);
+            return result.TotalCount;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, "Không thể lấy số lượng Issues: {Message}", ex.Message);
+            return 0;
         }
     }
 }

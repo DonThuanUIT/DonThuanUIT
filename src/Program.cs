@@ -29,20 +29,20 @@ try
     var svgGenerator = scope.ServiceProvider.GetRequiredService<ISvgGenerator>();
     var githubService = scope.ServiceProvider.GetRequiredService<IGithubService>();
 
-    logger.LogInformation("Đang đọc file assets...");
-    var asciiArt = await fileHandler.ReadAsciiArtAsync("Assets/ascii_art.txt");
+    logger.LogInformation("Đang đọc template SVG...");
     var svgTemplate = await fileHandler.ReadSvgTemplateAsync("Assets/template.svg");
 
     logger.LogInformation("Đang lấy dữ liệu từ GitHub API...");
     var githubStats = await githubService.GetGithubStatsAsync();
     
-    logger.LogInformation("Thông tin GitHub: {Repos} repos, {Stars} stars, {Commits} commits", 
+    logger.LogInformation("Thông tin GitHub: {Repos} repos, {Stars} stars, {Commits} commits, {Followers} followers", 
         githubStats.TotalRepos, 
         githubStats.TotalStars, 
-        githubStats.CommitsThisYear);
+        githubStats.CommitsThisYear,
+        githubStats.Followers);
 
     logger.LogInformation("Đang generate SVG...");
-    var finalSvg = svgGenerator.GenerateSvg(svgTemplate, asciiArt, githubStats);
+    var finalSvg = svgGenerator.GenerateSvg(svgTemplate, githubStats);
 
     logger.LogInformation("Đang ghi file profile.svg...");
     await fileHandler.WriteProfileSvgAsync(finalSvg);

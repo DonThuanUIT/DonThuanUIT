@@ -14,12 +14,10 @@ public class SvgGenerator : ISvgGenerator
         _logger = logger;
     }
 
-    public string GenerateSvg(string svgTemplate, string asciiArt, GithubStats stats)
+    public string GenerateSvg(string svgTemplate, GithubStats stats)
     {
         if (string.IsNullOrWhiteSpace(svgTemplate))
             throw new ArgumentException("SVG template không được null hoặc empty", nameof(svgTemplate));
-        if (asciiArt == null)
-            throw new ArgumentNullException(nameof(asciiArt));
         if (stats == null)
             throw new ArgumentNullException(nameof(stats));
 
@@ -28,10 +26,17 @@ public class SvgGenerator : ISvgGenerator
             var result = svgTemplate;
 
             result = result.Replace("{USERNAME}", EscapeXml(stats.Username));
+            result = result.Replace("{BIO}", EscapeXml(stats.Bio));
+            result = result.Replace("{LOCATION}", EscapeXml(stats.Location));
+            result = result.Replace("{BLOG}", EscapeXml(stats.Blog));
             result = result.Replace("{TOTAL_REPOS}", stats.TotalRepos.ToString());
             result = result.Replace("{STARS}", stats.TotalStars.ToString());
             result = result.Replace("{COMMITS_THIS_YEAR}", stats.CommitsThisYear.ToString());
-            result = result.Replace("{ASCII_ART_CONTENT}", EscapeXml(asciiArt));
+            result = result.Replace("{FOLLOWERS}", stats.Followers.ToString());
+            result = result.Replace("{FOLLOWING}", stats.Following.ToString());
+            result = result.Replace("{TOTAL_PULL_REQUESTS}", stats.TotalPullRequests.ToString());
+            result = result.Replace("{TOTAL_ISSUES}", stats.TotalIssues.ToString());
+            result = result.Replace("{YEAR}", DateTime.UtcNow.Year.ToString());
 
             if (stats.TopLanguages != null && stats.TopLanguages.Any())
             {

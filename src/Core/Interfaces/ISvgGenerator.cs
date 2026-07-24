@@ -10,11 +10,10 @@ namespace GithubProfileReadme.Core.Interfaces;
 public interface ISvgGenerator
 {
     /// <summary>
-    /// Generate SVG hoàn chỉnh từ template, ASCII art và thống kê GitHub
+    /// Generate SVG hoàn chỉnh từ template và thống kê GitHub
     /// </summary>
     /// <param name="svgTemplate">Chuỗi SVG template</param>
-    /// <param name="asciiArt">Chuỗi ASCII art</param>
     /// <param name="stats">Thống kê GitHub</param>
     /// <returns>Chuỗi SVG hoàn chỉnh</returns>
-    string GenerateSvg(string svgTemplate, string asciiArt, GithubStats stats);
+    string GenerateSvg(string svgTemplate, GithubStats stats);
 }
