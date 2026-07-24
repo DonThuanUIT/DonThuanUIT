@@ -3,7 +3,6 @@ using Microsoft.Extensions.Logging;
 
 namespace GithubProfileReadme.Infrastructure;
 
-
 /// <summary>
 /// Implementation để đọc/ghi file từ filesystem
 /// SRP: Chỉ phụ trách việc đọc/ghi file
@@ -120,7 +119,7 @@ public class FileHandler : IFileHandler
     }
 
     /// <summary>
-    /// Ghi SVG hoàn chỉnh ra file profile.svg
+    /// Ghi SVG hoàn chỉnh ra file profile.svg (ở thư mục gốc của repository)
     /// </summary>
     public async Task WriteProfileSvgAsync(string content, string outputPath = "profile.svg", CancellationToken cancellationToken = default)
     {
@@ -136,10 +135,18 @@ public class FileHandler : IFileHandler
 
         try
         {
-            // Đảm bảo đường dẫn đầy đủ
-            var fullPath = Path.IsPathRooted(outputPath) 
-                ? outputPath 
-                : Path.Combine(Directory.GetCurrentDirectory(), outputPath);
+            // Nếu đang ở thư mục src/, ghi lên thư mục parent
+            var currentDir = Directory.GetCurrentDirectory();
+            string fullPath;
+            
+            if (Path.GetFileName(currentDir).Equals("src", StringComparison.OrdinalIgnoreCase))
+            {
+                fullPath = Path.Combine(Path.GetDirectoryName(currentDir)!, outputPath);
+            }
+            else
+            {
+                fullPath = Path.Combine(currentDir, outputPath);
+            }
 
             _logger.LogInformation("Đang ghi SVG ra file: {Path}", fullPath);
 

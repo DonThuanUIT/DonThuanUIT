@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GithubProfileReadme")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7058aa78e3cda51eb7223362e78cfdc42e589f16")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69f092f6e3c21523c053ef22c6792bc1336adb44")]
 [assembly: System.Reflection.AssemblyProductAttribute("GithubProfileReadme")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GithubProfileReadme")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

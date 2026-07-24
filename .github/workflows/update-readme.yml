@@ -43,11 +43,21 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           
+          # Kiểm tra xem file profile.svg có tồn tại không
+          if [ ! -f "profile.svg" ]; then
+            echo "profile.svg chưa tồn tại, bỏ qua commit."
+            exit 0
+          fi
+          
           # Kiểm tra xem profile.svg có thay đổi không
-          if git diff --quiet profile.svg; then
-            echo "profile.svg không có thay đổi, bỏ qua commit."
-          else
+          if git status --porcelain profile.svg | grep -q "^\s*[M?A]"; then
             git add profile.svg
-            git commit -m "chore: update profile.svg"
-            git push
+            if git commit -m "chore: update profile.svg"; then
+              git push
+              echo "Đã commit và push profile.svg thành công."
+            else
+              echo "Không có thay đổi để commit."
+            fi
+          else
+            echo "profile.svg không có thay đổi, bỏ qua commit."
           fi
