@@ -1,42 +1,24 @@
 <svg width="960" height="540" xmlns="http://www.w3.org/2000/svg">
 
-  <!-- Background - Terminal style -->
+  <!-- Background -->
   <rect width="100%" height="100%" fill="#0a0a0a"/>
-  <rect width="100%" height="100%" fill="url(#scanlines)"/>
-  
-  <defs>
-    <!-- Scanline pattern for CRT effect -->
-    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="100%" height="4">
-      <line x1="0" y1="0" x2="100%" y2="0" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-    </pattern>
-    
-    <!-- Glow filter -->
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
 
-  <!-- Top border - terminal style -->
+  <!-- Terminal window -->
   <rect x="20" y="20" width="920" height="500" rx="8" ry="8" fill="#141414" stroke="#2a2a2a" stroke-width="1"/>
   
-  <!-- Terminal title bar -->
+  <!-- Title bar -->
   <rect x="20" y="20" width="920" height="32" rx="8" ry="8" fill="#1a1a1a"/>
   <rect x="20" y="36" width="920" height="16" fill="#1a1a1a"/>
   
-  <!-- Window buttons -->
+  <!-- Window dots -->
   <circle cx="42" cy="36" r="6" fill="#ff5f57"/>
   <circle cx="60" cy="36" r="6" fill="#ffbd2e"/>
   <circle cx="78" cy="36" r="6" fill="#28c840"/>
   
-  <!-- Terminal title -->
-  <text x="480" y="40" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12" fill="#666" text-anchor="middle">user@github:~$ bash profile.sh</text>
+  <text x="480" y="40" font-family="Consolas, monospace" font-size="12" fill="#666" text-anchor="middle">user@github:~/profile$</text>
 
-  <!-- LEFT PANEL - ASCII Art -->
-  <text x="50" y="90" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="10" fill="#00ff00" xml:space="preserve" filter="url(#glow)">
+  <!-- Left: ASCII Art -->
+  <text x="50" y="90" font-family="Consolas, monospace" font-size="10" fill="#00ff00" xml:space="preserve">
 %????????%                         
                      ??????????????????                      
                  ??????????????????????????                   
@@ -67,74 +49,28 @@
           ?+=????========================--+++?
   </text>
 
-  <!-- Separator line -->
-  <line x1="440" y1="60" x2="440" y2="500" stroke="#333" stroke-width="1" stroke-dasharray="4,4"/>
+  <!-- Divider -->
+  <line x1="440" y1="60" x2="440" y2="500" stroke="#333" stroke-width="1" stroke-dasharray="4 4"/>
 
-  <!-- RIGHT PANEL - System Info -->
-  <text x="460" y="85" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="14" fill="#00ff00" font-weight="bold" filter="url(#glow)">
-    ╔═══════════════════════════╗
-  </text>
-  <text x="460" y="105" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="14" fill="#00ff00" font-weight="bold" filter="url(#glow)">
-    ║     SYSTEM INFORMATION     ║
-  </text>
-  <text x="460" y="125" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="14" fill="#00ff00" font-weight="bold" filter="url(#glow)">
-    ╚═══════════════════════════╝
-  </text>
+  <!-- Right: Stats -->
+  <text x="460" y="90" font-family="Consolas, monospace" font-size="13" fill="#00ff00">[root@github ~]# whoami</text>
+  <text x="460" y="112" font-family="Consolas, monospace" font-size="13" fill="#fff">DonThuanUIT</text>
 
-  <!-- User -->
-  <text x="460" y="160" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12" fill="#888">
-    <tspan fill="#00ff00">$</tspan> whoami
-  </text>
-  <text x="460" y="180" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="13" fill="#ffffff" filter="url(#glow)">
-    DonThuanUIT
-  </text>
+  <text x="460" y="150" font-family="Consolas, monospace" font-size="13" fill="#00ff00">[root@github ~]# repos --count</text>
+  <text x="460" y="172" font-family="Consolas, monospace" font-size="13" fill="#fff">Total Repos: 8</text>
 
-  <!-- Repos -->
-  <text x="460" y="215" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12" fill="#888">
-    <tspan fill="#00ff00">$</tspan> ls -la ~/repositories | wc -l
-  </text>
-  <text x="460" y="235" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="13" fill="#ffffff" filter="url(#glow)">
-    🗂  Total Repos: <tspan fill="#ffbd2e">8</tspan>
-  </text>
+  <text x="460" y="210" font-family="Consolas, monospace" font-size="13" fill="#00ff00">[root@github ~]# stars --sum</text>
+  <text x="460" y="232" font-family="Consolas, monospace" font-size="13" fill="#fff">Total Stars: 2</text>
 
-  <!-- Stars -->
-  <text x="460" y="270" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12" fill="#888">
-    <tspan fill="#00ff00">$</tspan> git stars --count
-  </text>
-  <text x="460" y="290" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="13" fill="#ffffff" filter="url(#glow)">
-    ⭐ Total Stars: <tspan fill="#ffbd2e">2</tspan>
-  </text>
+  <text x="460" y="270" font-family="Consolas, monospace" font-size="13" fill="#00ff00">[root@github ~]# git log --since=2024</text>
+  <text x="460" y="292" font-family="Consolas, monospace" font-size="13" fill="#fff">Commits This Year: 40</text>
 
-  <!-- Commits -->
-  <text x="460" y="325" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12" fill="#888">
-    <tspan fill="#00ff00">$</tspan> git log --since="2024-01-01" --oneline | wc -l
-  </text>
-  <text x="460" y="345" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="13" fill="#ffffff" filter="url(#glow)">
-    🔨 Commits This Year: <tspan fill="#ffbd2e">40</tspan>
-  </text>
+  <text x="460" y="330" font-family="Consolas, monospace" font-size="13" fill="#00ff00">[root@github ~]# languages --list</text>
+  <text x="460" y="352" font-family="Consolas, monospace" font-size="13" fill="#fff">Top Languages: Java, C#, HTML</text>
 
-  <!-- Languages -->
-  <text x="460" y="380" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="12" fill="#888">
-    <tspan fill="#00ff00">$</tspan> cat ~/tech-stack.txt
-  </text>
-  <text x="460" y="400" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="13" fill="#ffffff" filter="url(#glow)">
-    💻 Tech Stack: <tspan fill="#28c840">Java, C#, HTML</tspan>
-  </text>
-
-  <!-- Footer - status bar -->
-  <rect x="20" y="488" width="920" height="32" fill="#1a1a1a" rx="0"/>
-  <rect x="20" y="488" width="920" height="32" rx="0" ry="0" fill="#1a1a1a"/>
-  <rect x="20" y="504" width="920" height="16" fill="#1a1a1a"/>
-  
-  <!-- Status items -->
-  <text x="40" y="508" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="11" fill="#28c840">
-    ● ACTIVE
-  </text>
-  <text x="480" y="508" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="11" fill="#555" text-anchor="middle">
-    Last update: 2026-07-24 08:40 UTC
-  </text>
-  <text x="920" y="508" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace" font-size="11" fill="#555" text-anchor="end">
-    profile.sh: line 42
-  </text>
+  <!-- Footer -->
+  <rect x="20" y="488" width="920" height="32" fill="#1a1a1a"/>
+  <text x="40" y="508" font-family="Consolas, monospace" font-size="11" fill="#555">Last update: 2026-07-24 08:47 UTC</text>
+  <text x="920" y="508" font-family="Consolas, monospace" font-size="11" fill="#555" text-anchor="end">profile.sh</text>
 
 </svg>
