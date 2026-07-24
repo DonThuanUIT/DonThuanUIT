@@ -15,10 +15,10 @@
   <circle cx="60" cy="36" r="6" fill="#ffbd2e"/>
   <circle cx="78" cy="36" r="6" fill="#28c840"/>
   
-  <text x="480" y="40" font-family="Consolas, monospace" font-size="12" fill="#666" text-anchor="middle">user@github:~/profile$</text>
+  <text x="480" y="40" font-family="'Courier New', monospace" font-size="12" fill="#666" text-anchor="middle">user@github:~/profile$</text>
 
-  <!-- Left: ASCII Art -->
-  <text x="50" y="90" font-family="Consolas, monospace" font-size="10" fill="#00ff00" xml:space="preserve">
+  <!-- Left: ASCII Art - dùng font monospace để hỗ trợ Unicode block characters -->
+  <text x="50" y="90" font-family="'Courier New', monospace" font-size="6" fill="#00ff00" xml:space="preserve">
 {ASCII_ART_CONTENT}
   </text>
 
@@ -26,24 +26,24 @@
   <line x1="440" y1="60" x2="440" y2="500" stroke="#333" stroke-width="1" stroke-dasharray="4 4"/>
 
   <!-- Right: Stats -->
-  <text x="460" y="90" font-family="Consolas, monospace" font-size="13" fill="#00ff00">[root@github ~]# whoami</text>
-  <text x="460" y="112" font-family="Consolas, monospace" font-size="13" fill="#fff">{USERNAME}</text>
+  <text x="460" y="90" font-family="'Courier New', monospace" font-size="13" fill="#00ff00">[root@github ~]# whoami</text>
+  <text x="460" y="112" font-family="'Courier New', monospace" font-size="13" fill="#fff">{USERNAME}</text>
 
-  <text x="460" y="150" font-family="Consolas, monospace" font-size="13" fill="#00ff00">[root@github ~]# repos --count</text>
-  <text x="460" y="172" font-family="Consolas, monospace" font-size="13" fill="#fff">Total Repos: {TOTAL_REPOS}</text>
+  <text x="460" y="150" font-family="'Courier New', monospace" font-size="13" fill="#00ff00">[root@github ~]# repos --count</text>
+  <text x="460" y="172" font-family="'Courier New', monospace" font-size="13" fill="#fff">Total Repos: {TOTAL_REPOS}</text>
 
-  <text x="460" y="210" font-family="Consolas, monospace" font-size="13" fill="#00ff00">[root@github ~]# stars --sum</text>
-  <text x="460" y="232" font-family="Consolas, monospace" font-size="13" fill="#fff">Total Stars: {STARS}</text>
+  <text x="460" y="210" font-family="'Courier New', monospace" font-size="13" fill="#00ff00">[root@github ~]# stars --sum</text>
+  <text x="460" y="232" font-family="'Courier New', monospace" font-size="13" fill="#fff">Total Stars: {STARS}</text>
 
-  <text x="460" y="270" font-family="Consolas, monospace" font-size="13" fill="#00ff00">[root@github ~]# git log --since=2024</text>
-  <text x="460" y="292" font-family="Consolas, monospace" font-size="13" fill="#fff">Commits This Year: {COMMITS_THIS_YEAR}</text>
+  <text x="460" y="270" font-family="'Courier New', monospace" font-size="13" fill="#00ff00">[root@github ~]# git log --since=2024</text>
+  <text x="460" y="292" font-family="'Courier New', monospace" font-size="13" fill="#fff">Commits This Year: {COMMITS_THIS_YEAR}</text>
 
-  <text x="460" y="330" font-family="Consolas, monospace" font-size="13" fill="#00ff00">[root@github ~]# languages --list</text>
-  <text x="460" y="352" font-family="Consolas, monospace" font-size="13" fill="#fff">Top Languages: {TOP_LANGUAGES}</text>
+  <text x="460" y="330" font-family="'Courier New', monospace" font-size="13" fill="#00ff00">[root@github ~]# languages --list</text>
+  <text x="460" y="352" font-family="'Courier New', monospace" font-size="13" fill="#fff">Top Languages: {TOP_LANGUAGES}</text>
 
   <!-- Footer -->
   <rect x="20" y="488" width="920" height="32" fill="#1a1a1a"/>
-  <text x="40" y="508" font-family="Consolas, monospace" font-size="11" fill="#555">Last update: {UPDATE_TIME}</text>
-  <text x="920" y="508" font-family="Consolas, monospace" font-size="11" fill="#555" text-anchor="end">profile.sh</text>
+  <text x="40" y="508" font-family="'Courier New', monospace" font-size="11" fill="#555">Last update: {UPDATE_TIME}</text>
+  <text x="920" y="508" font-family="'Courier New', monospace" font-size="11" fill="#555" text-anchor="end">profile.sh</text>
 
 </svg>
