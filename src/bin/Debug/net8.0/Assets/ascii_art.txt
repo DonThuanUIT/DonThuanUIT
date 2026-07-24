@@ -1,9 +1,0 @@
-_____ _       _ _____ _____ ____  
-  |_   _| |     | |_   _|_   _|  _ \ 
-    | | | |     | | | |   | | | |_) |
-    | | | |_____| | | |   | | |  __/ 
-    |_| |_______|_| |_|   |_| |_|    
-                                     
-  > Software Developer & Open Source Enthusiast
-  > Building tools that matter
-  > Coffee-powered since 1995
