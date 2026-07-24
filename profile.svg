@@ -1,0 +1,48 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#1e1e1e"/>
+  
+  <!-- Header -->
+  <text x="20" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#ffffff">
+    Hello, I'm DonThuanUIT!
+  </text>
+  
+  <!-- Main stats Section -->
+  <text x="20" y="90" font-family="Courier New, monospace" font-size="14" fill="#00ff00" xml:space="preserve">
+_____ _       _ _____ _____ ____  
+  |_   _| |     | |_   _|_   _|  _ \ 
+    | | | |     | | | |   | | | |_) |
+    | | | |_____| | | |   | | |  __/ 
+    |_| |_______|_| |_|   |_| |_|    
+                                     
+  &gt; Software Developer &amp; Open Source Enthusiast
+  &gt; Building tools that matter
+  &gt; Coffee-powered since 1995
+  </text>
+  
+  <!-- Statistics -->
+  <text x="20" y="250" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4CAF50">
+    📊 GitHub Stats
+  </text>
+  
+  <text x="20" y="280" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">
+    📦 Total Repos: 8
+  </text>
+  
+  <text x="20" y="305" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">
+    ⭐ Total Stars: 2
+  </text>
+  
+  <text x="20" y="330" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">
+    🔨 Commits This Year: 40
+  </text>
+  
+  <text x="20" y="355" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">
+    💻 Top Languages: Java, C#, HTML
+  </text>
+  
+  <!-- Footer -->
+  <text x="20" y="385" font-family="Arial, sans-serif" font-size="12" fill="#888888" font-style="italic">
+    Last updated: 2026-07-24 08:28 UTC
+  </text>
+</svg>
