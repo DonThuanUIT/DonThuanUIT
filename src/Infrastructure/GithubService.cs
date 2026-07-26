@@ -51,7 +51,11 @@ public class GithubService : IGithubService
                 Following = user.Following,
                 Bio = user.Bio ?? string.Empty,
                 Blog = user.Blog ?? string.Empty,
-                Location = user.Location ?? string.Empty
+                Location = user.Location ?? string.Empty,
+                Facebook = Environment.GetEnvironmentVariable("FACEBOOK") ?? "https://facebook.com/donthuan.090806",
+                LinkedIn = Environment.GetEnvironmentVariable("LINKEDIN") ?? "https://linkedin.com/in/DonThuan",
+                Email = Environment.GetEnvironmentVariable("EMAIL") ?? "donthuan090806@gmail.com",
+                TechStack = Environment.GetEnvironmentVariable("TECH_STACK") ?? "Java | Spring | .NET | PostgreSQL | Docker"
             };
 
             var repos = new List<Repository>();

@@ -27,8 +27,10 @@ public class SvgGenerator : ISvgGenerator
 
             result = result.Replace("{USERNAME}", EscapeXml(stats.Username));
             result = result.Replace("{BIO}", EscapeXml(stats.Bio));
-            result = result.Replace("{LOCATION}", EscapeXml(stats.Location));
-            result = result.Replace("{BLOG}", EscapeXml(stats.Blog));
+            result = result.Replace("{FACEBOOK}", EscapeXml(stats.Facebook));
+            result = result.Replace("{LINKEDIN}", EscapeXml(stats.LinkedIn));
+            result = result.Replace("{EMAIL}", EscapeXml(stats.Email));
+            result = result.Replace("{TECH_STACK}", EscapeXml(stats.TechStack));
             result = result.Replace("{TOTAL_REPOS}", stats.TotalRepos.ToString());
             result = result.Replace("{STARS}", stats.TotalStars.ToString());
             result = result.Replace("{COMMITS_THIS_YEAR}", stats.CommitsThisYear.ToString());

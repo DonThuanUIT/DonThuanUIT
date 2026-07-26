@@ -66,4 +66,24 @@ public class GithubStats
     /// Tổng số Issues đã tạo
     /// </summary>
     public int TotalIssues { get; set; }
+
+    /// <summary>
+    /// Facebook URL
+    /// </summary>
+    public string Facebook { get; set; } = string.Empty;
+
+    /// <summary>
+    /// LinkedIn URL
+    /// </summary>
+    public string LinkedIn { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Email
+    /// </summary>
+    public string Email { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Tech stack (các công nghệ sử dụng)
+    /// </summary>
+    public string TechStack { get; set; } = string.Empty;
 }

@@ -35,29 +35,30 @@ jobs:
         working-directory: ./src
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: ${{ vars.GITHUB_USERNAME || github.actor }}
+          FACEBOOK: ${{ vars.FACEBOOK }}
+          LINKEDIN: ${{ vars.LINKEDIN }}
+          EMAIL: ${{ vars.EMAIL }}
+          TECH_STACK: ${{ vars.TECH_STACK }}
         run: |
           dotnet run --project GithubProfileReadme.csproj --configuration Release --no-build
 
-      - name: Commit and push profile.svg
+      - name: Commit and push profile.svg & README.md
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           
-          # Kiểm tra xem file profile.svg có tồn tại không
-          if [ ! -f "profile.svg" ]; then
-            echo "profile.svg chưa tồn tại, bỏ qua commit."
-            exit 0
-          fi
+          # Add both files
+          git add profile.svg README.md
           
-          # Kiểm tra xem profile.svg có thay đổi không
-          if git status --porcelain profile.svg | grep -q "^\s*[M?A]"; then
-            git add profile.svg
-            if git commit -m "chore: update profile.svg"; then
-              git push
-              echo "Đã commit và push profile.svg thành công."
-            else
-              echo "Không có thay đổi để commit."
-            fi
+          # Check if there are any changes to commit
+          if git diff --cached --quiet; then
+            echo "Không có thay đổi để commit."
           else
-            echo "profile.svg không có thay đổi, bỏ qua commit."
+            if git commit -m "chore: update profile and readme"; then
+              git push
+              echo "Đã commit và push thành công."
+            else
+              echo "Commit thất bại."
+            fi
           fi
