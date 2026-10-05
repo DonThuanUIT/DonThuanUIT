@@ -42,7 +42,7 @@
   <text x="35" y="360" font-family="'Courier New', monospace" font-size="12" fill="#f8f8f2">  <tspan fill="#8be9fd">🔀 PRs:</tspan>         0</text>
   <text x="35" y="378" font-family="'Courier New', monospace" font-size="12" fill="#f8f8f2">  <tspan fill="#8be9fd">🐛 Issues:</tspan>      0</text>
   <text x="35" y="396" font-family="'Courier New', monospace" font-size="12" fill="#f8f8f2">  <tspan fill="#8be9fd">👥 Followers:</tspan>   1</text>
-  <text x="35" y="414" font-family="'Courier New', monospace" font-size="12" fill="#f8f8f2">  <tspan fill="#8be9fd">🔗 Following:</tspan>   1</text>
+  <text x="35" y="414" font-family="'Courier New', monospace" font-size="12" fill="#f8f8f2">  <tspan fill="#8be9fd">🔗 Following:</tspan>   2</text>
 
   <!-- Languages -->
   <text x="35" y="444" font-family="'Courier New', monospace" font-size="13" fill="#00ff00">user@github:~$ <tspan fill="#569cd6">cat ~/languages</tspan></text>
@@ -50,7 +50,7 @@
 
   <!-- Footer -->
   <rect x="20" y="520" width="840" height="40" fill="#1a1a1a"/>
-  <text x="35" y="544" font-family="'Courier New', monospace" font-size="11" fill="#555">Last update: 2026-10-04 03:44 UTC</text>
+  <text x="35" y="544" font-family="'Courier New', monospace" font-size="11" fill="#555">Last update: 2026-10-05 03:28 UTC</text>
   <text x="860" y="544" font-family="'Courier New', monospace" font-size="11" fill="#555" text-anchor="end">~/profile.sh</text>
 
 </svg>
